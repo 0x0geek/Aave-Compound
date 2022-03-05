@@ -1,0 +1,26 @@
+dotenv: .env
+
+wallets:
+  from_key: ${PRIVATE_KEY}
+
+dependencies:
+  - "aave/protocol-v2@1.0.1"
+  - OpenZeppelin/openzeppelin-contracts@4.3.2
+
+compiler:
+  solc:
+    remappings:
+      - "@aave=aave/protocol-v2@1.0.1"
+      - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.3.2"
+
+networks:
+  mainnet-fork:
+    weth-token: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+    dai-token: "0x6b175474e89094c44da98b954eedeac495271d0f"
+    provider: "0xb53c1a33016b2dc2ff3653530bff1848a515c8c5"
+    cdai: "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643"
+  mainnet-fork-dev:
+    weth-token: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+    dai-token: "0x6b175474e89094c44da98b954eedeac495271d0f"
+    provider: "0xb53c1a33016b2dc2ff3653530bff1848a515c8c5"
+    cdai: "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643"
