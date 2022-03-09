@@ -1,10 +1,7 @@
 from brownie import interface, network, config
 
-weth_Token = config["networks"][network.show_active()]["weth-token"]
 dai_Token = config["networks"][network.show_active()]["dai-token"]
 cDai = config["networks"][network.show_active()]["cdai"]
-
-
 
 def get_lending_pool():
     provider_address = config["networks"][network.show_active()]["provider"]
@@ -56,9 +53,9 @@ def get_aave_apy():
     variableBorrowAPY = ((1 + (variableBorrowAPR / SECONDS_PER_YEAR)) ** SECONDS_PER_YEAR) - 1
     stableBorrowAPY = ((1 + (stableBorrowAPR / SECONDS_PER_YEAR)) ** SECONDS_PER_YEAR) - 1
 
-    print("aave weth apy is: ", depositAPY * 100)
-    print("aave weth stable borrow apy is: ", stableBorrowAPY * 100)
-    print("aave weth variable borrow apy is: ", variableBorrowAPY * 100)
+    print("aave dai apy is: ", depositAPY * 100)
+    print("aave dai stable borrow apy is: ", stableBorrowAPY * 100)
+    print("aave dai variable borrow apy is: ", variableBorrowAPY * 100)
 
     return depositAPY * 100
 
