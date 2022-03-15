@@ -10,6 +10,7 @@ import ILendingPoolAddressesProvider from "../artifacts/interfaces/ILendingPoolA
 import ILendingPool from "../artifacts/interfaces/ILendingPool.json";
 import CErc20 from "../artifacts/interfaces/CErc20.json"
 import config from "../brownie-config.json";
+
 import dai from "../tokens-img/dai.png"
 import aave from "../tokens-img/aave.png"
 import usdt from "../tokens-img/usdt.png"
@@ -194,9 +195,6 @@ function Dashboerd() {
         const compSupportedTokens = compAllTokens.data.tokens.filter(t => t.symbol.startsWith('c') && t.chainId == 1)
         console.log(compSupportedTokens)
         console.log(aaveSupportedTokens)
-
-
-
     }
 
     useEffect(() => {
@@ -217,7 +215,6 @@ function Dashboerd() {
                 <br />
 
                 <Container>
-
                     <Table hover>
                         <thead>
                             <tr>
