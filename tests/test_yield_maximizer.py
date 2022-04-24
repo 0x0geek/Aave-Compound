@@ -79,10 +79,10 @@ def test_deposit_erc20():
 
     # Getting some DAI
     if network.show_active() in FORKED_BLOCHCHAINS:
-        get_weth(owner, 20)
-        mint_erc20(dai_Token, toWei(10), owner)
+        get_weth(owner, 10)
+        mint_erc20(dai_Token, toWei(5), owner)
 
-    amount = toWei(10000) # 10000 DAI
+    amount = toWei(5000) # 5000 DAI
 
     # approve fund transfer to YieldMaximizer
     approve_erc20(dai_Token, maximizer.address, amount, owner)
@@ -97,6 +97,51 @@ def test_deposit_erc20():
 
     assert current_protocol == PROTOCOLS["AAVE"] if aaveApy > compApy else PROTOCOLS["COMPOUND"]
     assert maximizer.userTokensAmountMapping("DAI") == amount
+
+def test_add_to_deposited_amount():
+    if network.show_active() not in FORKED_BLOCHCHAINS:
+        pytest.skip() 
+
+    owner = get_account()
+
+    dai_Token = config["networks"][network.show_active()]["dai-token"]
+    cdai = config["networks"][network.show_active()]["cdai"]
+    adai = config["networks"][network.show_active()]["adai"]
+
+    lending_pool = get_lending_pool()
+
+    maximizer = YieldMaximizer.deploy(lending_pool.address, {"from": owner})
+
+    add_token_tx = maximizer.addToken("DAI", dai_Token, cdai, adai, {"from": owner})
+    add_token_tx.wait(1)
+
+    # Getting some DAI
+    if network.show_active() in FORKED_BLOCHCHAINS:
+        get_weth(owner, 10)
+        mint_erc20(dai_Token, toWei(5), owner)
+
+    amount_1 = toWei(5000) # 5000 DAI
+
+    # approve fund transfer to YieldMaximizer
+    approve_erc20(dai_Token, maximizer.address, amount_1, owner)
+
+    compApy = get_compound_apy(cdai)
+    aaveApy = get_aave_apy(dai_Token)
+
+    deposit_tx = maximizer.deposit(amount_1, "DAI", compApy, aaveApy, {"from": owner})
+    deposit_tx.wait(1)
+
+    amount_2 = toWei(1000)
+
+    approve_erc20(dai_Token, maximizer.address, amount_2, owner)
+
+    deposit_tx_2 = maximizer.deposit(amount_2, "DAI", compApy, aaveApy, {"from": owner})
+    deposit_tx_2.wait(1)
+
+    current_protocol = maximizer.getCurrentProtocol("DAI")
+
+    assert current_protocol == PROTOCOLS["AAVE"] if aaveApy > compApy else PROTOCOLS["COMPOUND"]
+    assert maximizer.userTokensAmountMapping("DAI") == amount_1 + amount_2
 
 def test_rebalance():
     if network.show_active() not in FORKED_BLOCHCHAINS:
@@ -117,10 +162,10 @@ def test_rebalance():
 
     # Getting some DAI
     if network.show_active() in FORKED_BLOCHCHAINS:
-        get_weth(owner, 20)
-        mint_erc20(dai_Token, toWei(10), owner)
+        get_weth(owner, 10)
+        mint_erc20(dai_Token, toWei(5), owner)
 
-    amount = toWei(10000) # 10000 DAI
+    amount = toWei(5000) # 5000 DAI
 
     # approve fund transfer to YieldMaximizer
     approve_erc20(dai_Token, maximizer.address, amount, owner)
@@ -165,11 +210,11 @@ def test_withdraw():
 
     # Getting some DAI
     if network.show_active() in FORKED_BLOCHCHAINS:
-        get_weth(owner, 20)
-        mint_erc20(dai_Token, toWei(10), owner)
+        get_weth(owner, 10)
+        mint_erc20(dai_Token, toWei(5), owner)
 
     initial_dai_balance = get_erc20_balance(dai_Token, owner)
-    amount = toWei(10000) # 10000 DAI
+    amount = toWei(5000) # 5000 DAI
 
     # approve fund transfer to YieldMaximizer
     approve_erc20(dai_Token, maximizer.address, amount, owner)
