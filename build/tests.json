@@ -1,0 +1,17 @@
+{
+  "contracts": {
+    "Aggregator": "47ff43b6c8757406089471267bc6030a49aaba01",
+    "ERC20Faucet": "4e73216894190abdeef9b88e0cbcaa1c485b772f",
+    "YieldMaximizer": "cae11917465d3cb5be0b79ec589194fd7f10334f"
+  },
+  "tests": {
+    "tests/test_yield_maximizer.py": {
+      "coverage": false,
+      "isolated": false,
+      "results": ".....",
+      "sha1": "f74b14f0a96952a49c84272c6bc6f77f9470f173",
+      "txhash": []
+    }
+  },
+  "tx": {}
+}

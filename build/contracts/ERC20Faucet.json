@@ -1,0 +1,5658 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_uniswapV2RouterAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_erc20Address",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "erc20Address",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "swapETHtoERC20",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "uniswapRouter",
+      "outputs": [
+        {
+          "internalType": "contract IUniswapV2Router02",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "uniswapV2RouterAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "0": "contracts/ERC20Faucet.sol",
+    "3": "interfaces/IUniswapV2Router02.sol"
+  },
+  "ast": {
+    "absolutePath": "contracts/ERC20Faucet.sol",
+    "exportedSymbols": {
+      "ERC20Faucet": [
+        79
+      ],
+      "IERC20": [
+        971
+      ],
+      "IUniswapV2Router01": [
+        1279
+      ],
+      "IUniswapV2Router02": [
+        1364
+      ]
+    },
+    "id": 80,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:0"
+      },
+      {
+        "absolutePath": "interfaces/IERC20.sol",
+        "file": "../interfaces/IERC20.sol",
+        "id": 2,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 80,
+        "sourceUnit": 972,
+        "src": "58:34:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "interfaces/IUniswapV2Router02.sol",
+        "file": "../interfaces/IUniswapV2Router02.sol",
+        "id": 3,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 80,
+        "sourceUnit": 1365,
+        "src": "93:46:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ERC20Faucet",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 79,
+        "linearizedBaseContracts": [
+          79
+        ],
+        "name": "ERC20Faucet",
+        "nameLocation": "150:11:0",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "documentation": {
+              "id": 4,
+              "nodeType": "StructuredDocumentation",
+              "src": "168:19:0",
+              "text": "STATE VARIABLES"
+            },
+            "functionSelector": "4a377e1d",
+            "id": 6,
+            "mutability": "mutable",
+            "name": "uniswapV2RouterAddress",
+            "nameLocation": "207:22:0",
+            "nodeType": "VariableDeclaration",
+            "scope": 79,
+            "src": "192:37:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 5,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "192:7:0",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "276184ae",
+            "id": 8,
+            "mutability": "mutable",
+            "name": "erc20Address",
+            "nameLocation": "250:12:0",
+            "nodeType": "VariableDeclaration",
+            "scope": 79,
+            "src": "235:27:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 7,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "235:7:0",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "735de9f7",
+            "id": 11,
+            "mutability": "mutable",
+            "name": "uniswapRouter",
+            "nameLocation": "294:13:0",
+            "nodeType": "VariableDeclaration",
+            "scope": 79,
+            "src": "268:39:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IUniswapV2Router02_$1364",
+              "typeString": "contract IUniswapV2Router02"
+            },
+            "typeName": {
+              "id": 10,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 9,
+                "name": "IUniswapV2Router02",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 1364,
+                "src": "268:18:0"
+              },
+              "referencedDeclaration": 1364,
+              "src": "268:18:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IUniswapV2Router02_$1364",
+                "typeString": "contract IUniswapV2Router02"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 33,
+              "nodeType": "Block",
+              "src": "402:172:0",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 21,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 19,
+                      "name": "uniswapV2RouterAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6,
+                      "src": "412:22:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 20,
+                      "name": "_uniswapV2RouterAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14,
+                      "src": "437:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "412:48:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 22,
+                  "nodeType": "ExpressionStatement",
+                  "src": "412:48:0"
+                },
+                {
+                  "expression": {
+                    "id": 25,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 23,
+                      "name": "erc20Address",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8,
+                      "src": "470:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 24,
+                      "name": "_erc20Address",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 16,
+                      "src": "485:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "470:28:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 26,
+                  "nodeType": "ExpressionStatement",
+                  "src": "470:28:0"
+                },
+                {
+                  "expression": {
+                    "id": 31,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 27,
+                      "name": "uniswapRouter",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11,
+                      "src": "508:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IUniswapV2Router02_$1364",
+                        "typeString": "contract IUniswapV2Router02"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 29,
+                          "name": "_uniswapV2RouterAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14,
+                          "src": "543:23:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 28,
+                        "name": "IUniswapV2Router02",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1364,
+                        "src": "524:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_IUniswapV2Router02_$1364_$",
+                          "typeString": "type(contract IUniswapV2Router02)"
+                        }
+                      },
+                      "id": 30,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "524:43:0",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IUniswapV2Router02_$1364",
+                        "typeString": "contract IUniswapV2Router02"
+                      }
+                    },
+                    "src": "508:59:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IUniswapV2Router02_$1364",
+                      "typeString": "contract IUniswapV2Router02"
+                    }
+                  },
+                  "id": 32,
+                  "nodeType": "ExpressionStatement",
+                  "src": "508:59:0"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 12,
+              "nodeType": "StructuredDocumentation",
+              "src": "314:15:0",
+              "text": "CONSTRUCTOR"
+            },
+            "id": 34,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14,
+                  "mutability": "mutable",
+                  "name": "_uniswapV2RouterAddress",
+                  "nameLocation": "354:23:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34,
+                  "src": "346:31:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "346:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16,
+                  "mutability": "mutable",
+                  "name": "_erc20Address",
+                  "nameLocation": "387:13:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34,
+                  "src": "379:21:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "379:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "345:56:0"
+            },
+            "returnParameters": {
+              "id": 18,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "402:0:0"
+            },
+            "scope": 79,
+            "src": "334:240:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 77,
+              "nodeType": "Block",
+              "src": "642:333:0",
+              "statements": [
+                {
+                  "assignments": [
+                    42
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 42,
+                      "mutability": "mutable",
+                      "name": "path",
+                      "nameLocation": "713:4:0",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 77,
+                      "src": "696:21:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                        "typeString": "address[]"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 40,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "696:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "id": 41,
+                        "nodeType": "ArrayTypeName",
+                        "src": "696:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                          "typeString": "address[]"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 48,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "hexValue": "32",
+                        "id": 46,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "734:1:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_2_by_1",
+                          "typeString": "int_const 2"
+                        },
+                        "value": "2"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_2_by_1",
+                          "typeString": "int_const 2"
+                        }
+                      ],
+                      "id": 45,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "720:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_address_$dyn_memory_ptr_$",
+                        "typeString": "function (uint256) pure returns (address[] memory)"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 43,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "724:7:0",
+                          "stateMutability": "nonpayable",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "id": 44,
+                        "nodeType": "ArrayTypeName",
+                        "src": "724:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                          "typeString": "address[]"
+                        }
+                      }
+                    },
+                    "id": 47,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "720:16:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                      "typeString": "address[] memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "696:40:0"
+                },
+                {
+                  "expression": {
+                    "id": 55,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 49,
+                        "name": "path",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 42,
+                        "src": "746:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                          "typeString": "address[] memory"
+                        }
+                      },
+                      "id": 51,
+                      "indexExpression": {
+                        "hexValue": "30",
+                        "id": 50,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "751:1:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "746:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "id": 52,
+                          "name": "uniswapRouter",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 11,
+                          "src": "756:13:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_IUniswapV2Router02_$1364",
+                            "typeString": "contract IUniswapV2Router02"
+                          }
+                        },
+                        "id": 53,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "WETH",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 983,
+                        "src": "756:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_pure$__$returns$_t_address_$",
+                          "typeString": "function () pure external returns (address)"
+                        }
+                      },
+                      "id": 54,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "756:20:0",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "746:30:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 56,
+                  "nodeType": "ExpressionStatement",
+                  "src": "746:30:0"
+                },
+                {
+                  "expression": {
+                    "id": 61,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 57,
+                        "name": "path",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 42,
+                        "src": "786:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                          "typeString": "address[] memory"
+                        }
+                      },
+                      "id": 59,
+                      "indexExpression": {
+                        "hexValue": "31",
+                        "id": 58,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "791:1:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_1_by_1",
+                          "typeString": "int_const 1"
+                        },
+                        "value": "1"
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "786:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 60,
+                      "name": "erc20Address",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8,
+                      "src": "796:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "786:22:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 62,
+                  "nodeType": "ExpressionStatement",
+                  "src": "786:22:0"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "30",
+                        "id": 69,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "886:1:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      {
+                        "id": 70,
+                        "name": "path",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 42,
+                        "src": "901:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                          "typeString": "address[] memory"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 71,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "919:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 72,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "919:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 73,
+                          "name": "block",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -4,
+                          "src": "943:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_block",
+                            "typeString": "block"
+                          }
+                        },
+                        "id": 74,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "timestamp",
+                        "nodeType": "MemberAccess",
+                        "src": "943:15:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                          "typeString": "address[] memory"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          {
+                            "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                            "typeString": "address[] memory"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "expression": {
+                          "id": 63,
+                          "name": "uniswapRouter",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 11,
+                          "src": "819:13:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_IUniswapV2Router02_$1364",
+                            "typeString": "contract IUniswapV2Router02"
+                          }
+                        },
+                        "id": 65,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "swapExactETHForTokens",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 1174,
+                        "src": "819:35:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_payable$_t_uint256_$_t_array$_t_address_$dyn_memory_ptr_$_t_address_$_t_uint256_$returns$_t_array$_t_uint256_$dyn_memory_ptr_$",
+                          "typeString": "function (uint256,address[] memory,address,uint256) payable external returns (uint256[] memory)"
+                        }
+                      },
+                      "id": 68,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "names": [
+                        "value"
+                      ],
+                      "nodeType": "FunctionCallOptions",
+                      "options": [
+                        {
+                          "expression": {
+                            "id": 66,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -15,
+                            "src": "862:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 67,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "value",
+                          "nodeType": "MemberAccess",
+                          "src": "862:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "src": "819:53:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_payable$_t_uint256_$_t_array$_t_address_$dyn_memory_ptr_$_t_address_$_t_uint256_$returns$_t_array$_t_uint256_$dyn_memory_ptr_$value",
+                        "typeString": "function (uint256,address[] memory,address,uint256) payable external returns (uint256[] memory)"
+                      }
+                    },
+                    "id": 75,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "819:149:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                      "typeString": "uint256[] memory"
+                    }
+                  },
+                  "id": 76,
+                  "nodeType": "ExpressionStatement",
+                  "src": "819:149:0"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 35,
+              "nodeType": "StructuredDocumentation",
+              "src": "580:16:0",
+              "text": "TRANSACTIONS"
+            },
+            "functionSelector": "6ca58c02",
+            "id": 78,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "swapETHtoERC20",
+            "nameLocation": "610:14:0",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 36,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "624:2:0"
+            },
+            "returnParameters": {
+              "id": 37,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "642:0:0"
+            },
+            "scope": 79,
+            "src": "601:374:0",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 80,
+        "src": "141:836:0",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:945:0"
+  },
+  "bytecode": "608060405234801561001057600080fd5b506040516104d43803806104d483398101604081905261002f9161008e565b600080546001600160a01b039384166001600160a01b031991821681179092556001805493909416928116929092179092556002805490911690911790556100c1565b80516001600160a01b038116811461008957600080fd5b919050565b600080604083850312156100a157600080fd5b6100aa83610072565b91506100b860208401610072565b90509250929050565b610404806100d06000396000f3fe60806040526004361061003f5760003560e01c8063276184ae146100445780634a377e1d146100805780636ca58c02146100a0578063735de9f7146100aa575b600080fd5b34801561005057600080fd5b50600154610064906001600160a01b031681565b6040516001600160a01b03909116815260200160405180910390f35b34801561008c57600080fd5b50600054610064906001600160a01b031681565b6100a86100ca565b005b3480156100b657600080fd5b50600254610064906001600160a01b031681565b6040805160028082526060820183526000926020830190803683375050600254604080516315ab88c960e31b815290519394506001600160a01b039091169263ad5c464892506004808301926020929190829003018186803b15801561012f57600080fd5b505afa158015610143573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101679190610260565b8160008151811061017a5761017a610290565b6001600160a01b03928316602091820292909201015260018054835192169183919081106101aa576101aa610290565b6001600160a01b039283166020918202929092010152600254604051637ff36ab560e01b8152911690637ff36ab59034906101f0906000908690339042906004016102a6565b6000604051808303818588803b15801561020957600080fd5b505af115801561021d573d6000803e3d6000fd5b50505050506040513d6000823e601f3d908101601f191682016040526102469190810190610310565b5050565b634e487b7160e01b600052604160045260246000fd5b60006020828403121561027257600080fd5b81516001600160a01b038116811461028957600080fd5b9392505050565b634e487b7160e01b600052603260045260246000fd5b600060808201868352602060808185015281875180845260a086019150828901935060005b818110156102f05784516001600160a01b0316835293830193918301916001016102cb565b50506001600160a01b039690961660408501525050506060015292915050565b6000602080838503121561032357600080fd5b825167ffffffffffffffff8082111561033b57600080fd5b818501915085601f83011261034f57600080fd5b8151818111156103615761036161024a565b8060051b604051601f19603f830116810181811085821117156103865761038661024a565b6040529182528482019250838101850191888311156103a457600080fd5b938501935b828510156103c2578451845293850193928501926103a9565b9897505050505050505056fea2646970667358221220849e86ea271c0325c9250f632b23ad0895c5c635e40ece88c1e084325bf2108164736f6c63430008090033",
+  "bytecodeSha1": "4e73216894190abdeef9b88e0cbcaa1c485b772f",
+  "compiler": {
+    "evm_version": "istanbul",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "version": "0.8.9+commit.e5eed63a"
+  },
+  "contractName": "ERC20Faucet",
+  "coverageMap": {
+    "branches": {
+      "0": {},
+      "3": {}
+    },
+    "statements": {
+      "0": {
+        "ERC20Faucet.swapETHtoERC20": {
+          "0": [
+            746,
+            776
+          ],
+          "1": [
+            786,
+            808
+          ],
+          "2": [
+            819,
+            968
+          ]
+        }
+      },
+      "3": {}
+    }
+  },
+  "dependencies": [
+    "IUniswapV2Router02"
+  ],
+  "deployedBytecode": "60806040526004361061003f5760003560e01c8063276184ae146100445780634a377e1d146100805780636ca58c02146100a0578063735de9f7146100aa575b600080fd5b34801561005057600080fd5b50600154610064906001600160a01b031681565b6040516001600160a01b03909116815260200160405180910390f35b34801561008c57600080fd5b50600054610064906001600160a01b031681565b6100a86100ca565b005b3480156100b657600080fd5b50600254610064906001600160a01b031681565b6040805160028082526060820183526000926020830190803683375050600254604080516315ab88c960e31b815290519394506001600160a01b039091169263ad5c464892506004808301926020929190829003018186803b15801561012f57600080fd5b505afa158015610143573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101679190610260565b8160008151811061017a5761017a610290565b6001600160a01b03928316602091820292909201015260018054835192169183919081106101aa576101aa610290565b6001600160a01b039283166020918202929092010152600254604051637ff36ab560e01b8152911690637ff36ab59034906101f0906000908690339042906004016102a6565b6000604051808303818588803b15801561020957600080fd5b505af115801561021d573d6000803e3d6000fd5b50505050506040513d6000823e601f3d908101601f191682016040526102469190810190610310565b5050565b634e487b7160e01b600052604160045260246000fd5b60006020828403121561027257600080fd5b81516001600160a01b038116811461028957600080fd5b9392505050565b634e487b7160e01b600052603260045260246000fd5b600060808201868352602060808185015281875180845260a086019150828901935060005b818110156102f05784516001600160a01b0316835293830193918301916001016102cb565b50506001600160a01b039690961660408501525050506060015292915050565b6000602080838503121561032357600080fd5b825167ffffffffffffffff8082111561033b57600080fd5b818501915085601f83011261034f57600080fd5b8151818111156103615761036161024a565b8060051b604051601f19603f830116810181811085821117156103865761038661024a565b6040529182528482019250838101850191888311156103a457600080fd5b938501935b828510156103c2578451845293850193928501926103a9565b9897505050505050505056fea2646970667358221220849e86ea271c0325c9250f632b23ad0895c5c635e40ece88c1e084325bf2108164736f6c63430008090033",
+  "deployedSourceMap": "141:836:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;235:27;;;;;;;;;;-1:-1:-1;235:27:0;;;;-1:-1:-1;;;;;235:27:0;;;;;;-1:-1:-1;;;;;178:32:4;;;160:51;;148:2;133:18;235:27:0;;;;;;;192:37;;;;;;;;;;-1:-1:-1;192:37:0;;;;-1:-1:-1;;;;;192:37:0;;;601:374;;;:::i;:::-;;268:39;;;;;;;;;;-1:-1:-1;268:39:0;;;;-1:-1:-1;;;;;268:39:0;;;601:374;720:16;;;734:1;720:16;;;;;;;;696:21;;720:16;;;;;;;;-1:-1:-1;;756:13:0;;:20;;;-1:-1:-1;;;756:20:0;;;;696:40;;-1:-1:-1;;;;;;756:13:0;;;;:18;;-1:-1:-1;756:20:0;;;;;;;;;;;;;;:13;:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;746:4;751:1;746:7;;;;;;;;:::i;:::-;-1:-1:-1;;;;;746:30:0;;;:7;;;;;;;;;:30;796:12;;;786:7;;796:12;;;786:4;;796:12;786:7;;;;;;:::i;:::-;-1:-1:-1;;;;;786:22:0;;;:7;;;;;;;;;:22;819:13;;:149;;-1:-1:-1;;;819:149:0;;:13;;;:35;;862:9;;819:149;;:13;;901:4;;919:10;;943:15;;819:149;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;819:149:0;;;;;;;;;;;;:::i;:::-;;642:333;601:374::o;457:127:4:-;518:10;513:3;509:20;506:1;499:31;549:4;546:1;539:15;573:4;570:1;563:15;589:290;659:6;712:2;700:9;691:7;687:23;683:32;680:52;;;728:1;725;718:12;680:52;754:16;;-1:-1:-1;;;;;799:31:4;;789:42;;779:70;;845:1;842;835:12;779:70;868:5;589:290;-1:-1:-1;;;589:290:4:o;884:127::-;945:10;940:3;936:20;933:1;926:31;976:4;973:1;966:15;1000:4;997:1;990:15;1016:908;1250:4;1298:3;1287:9;1283:19;1329:6;1318:9;1311:25;1355:2;1393:3;1388:2;1377:9;1373:18;1366:31;1417:6;1452;1446:13;1483:6;1475;1468:22;1521:3;1510:9;1506:19;1499:26;;1560:2;1552:6;1548:15;1534:29;;1581:1;1591:195;1605:6;1602:1;1599:13;1591:195;;;1670:13;;-1:-1:-1;;;;;1666:39:4;1654:52;;1761:15;;;;1726:12;;;;1702:1;1620:9;1591:195;;;-1:-1:-1;;;;;;;1842:32:4;;;;1837:2;1822:18;;1815:60;-1:-1:-1;;;1906:2:4;1891:18;1884:34;1803:3;1016:908;-1:-1:-1;;1016:908:4:o;1929:1105::-;2024:6;2055:2;2098;2086:9;2077:7;2073:23;2069:32;2066:52;;;2114:1;2111;2104:12;2066:52;2147:9;2141:16;2176:18;2217:2;2209:6;2206:14;2203:34;;;2233:1;2230;2223:12;2203:34;2271:6;2260:9;2256:22;2246:32;;2316:7;2309:4;2305:2;2301:13;2297:27;2287:55;;2338:1;2335;2328:12;2287:55;2367:2;2361:9;2389:2;2385;2382:10;2379:36;;;2395:18;;:::i;:::-;2441:2;2438:1;2434:10;2473:2;2467:9;2536:2;2532:7;2527:2;2523;2519:11;2515:25;2507:6;2503:38;2591:6;2579:10;2576:22;2571:2;2559:10;2556:18;2553:46;2550:72;;;2602:18;;:::i;:::-;2638:2;2631:22;2688:18;;;2722:15;;;;-1:-1:-1;2764:11:4;;;2760:20;;;2792:19;;;2789:39;;;2824:1;2821;2814:12;2789:39;2848:11;;;;2868:135;2884:6;2879:3;2876:15;2868:135;;;2950:10;;2938:23;;2901:12;;;;2981;;;;2868:135;;;3022:6;1929:1105;-1:-1:-1;;;;;;;;1929:1105:4:o",
+  "language": "Solidity",
+  "natspec": {
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "notice": "CONSTRUCTOR"
+      },
+      "swapETHtoERC20()": {
+        "notice": "TRANSACTIONS"
+      },
+      "uniswapV2RouterAddress()": {
+        "notice": "STATE VARIABLES"
+      }
+    },
+    "version": 1
+  },
+  "offset": [
+    141,
+    977
+  ],
+  "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH2 0x3F JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x276184AE EQ PUSH2 0x44 JUMPI DUP1 PUSH4 0x4A377E1D EQ PUSH2 0x80 JUMPI DUP1 PUSH4 0x6CA58C02 EQ PUSH2 0xA0 JUMPI DUP1 PUSH4 0x735DE9F7 EQ PUSH2 0xAA JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0x50 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x1 SLOAD PUSH2 0x64 SWAP1 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND DUP2 JUMP JUMPDEST PUSH1 0x40 MLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP1 SWAP2 AND DUP2 MSTORE PUSH1 0x20 ADD PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0x8C JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x0 SLOAD PUSH2 0x64 SWAP1 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND DUP2 JUMP JUMPDEST PUSH2 0xA8 PUSH2 0xCA JUMP JUMPDEST STOP JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0xB6 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x2 SLOAD PUSH2 0x64 SWAP1 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND DUP2 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD PUSH1 0x2 DUP1 DUP3 MSTORE PUSH1 0x60 DUP3 ADD DUP4 MSTORE PUSH1 0x0 SWAP3 PUSH1 0x20 DUP4 ADD SWAP1 DUP1 CALLDATASIZE DUP4 CALLDATACOPY POP POP PUSH1 0x2 SLOAD PUSH1 0x40 DUP1 MLOAD PUSH4 0x15AB88C9 PUSH1 0xE3 SHL DUP2 MSTORE SWAP1 MLOAD SWAP4 SWAP5 POP PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP1 SWAP2 AND SWAP3 PUSH4 0xAD5C4648 SWAP3 POP PUSH1 0x4 DUP1 DUP4 ADD SWAP3 PUSH1 0x20 SWAP3 SWAP2 SWAP1 DUP3 SWAP1 SUB ADD DUP2 DUP7 DUP1 EXTCODESIZE ISZERO DUP1 ISZERO PUSH2 0x12F JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP GAS STATICCALL ISZERO DUP1 ISZERO PUSH2 0x143 JUMPI RETURNDATASIZE PUSH1 0x0 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST POP POP POP POP PUSH1 0x40 MLOAD RETURNDATASIZE PUSH1 0x1F NOT PUSH1 0x1F DUP3 ADD AND DUP3 ADD DUP1 PUSH1 0x40 MSTORE POP DUP2 ADD SWAP1 PUSH2 0x167 SWAP2 SWAP1 PUSH2 0x260 JUMP JUMPDEST DUP2 PUSH1 0x0 DUP2 MLOAD DUP2 LT PUSH2 0x17A JUMPI PUSH2 0x17A PUSH2 0x290 JUMP JUMPDEST PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP3 DUP4 AND PUSH1 0x20 SWAP2 DUP3 MUL SWAP3 SWAP1 SWAP3 ADD ADD MSTORE PUSH1 0x1 DUP1 SLOAD DUP4 MLOAD SWAP3 AND SWAP2 DUP4 SWAP2 SWAP1 DUP2 LT PUSH2 0x1AA JUMPI PUSH2 0x1AA PUSH2 0x290 JUMP JUMPDEST PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP3 DUP4 AND PUSH1 0x20 SWAP2 DUP3 MUL SWAP3 SWAP1 SWAP3 ADD ADD MSTORE PUSH1 0x2 SLOAD PUSH1 0x40 MLOAD PUSH4 0x7FF36AB5 PUSH1 0xE0 SHL DUP2 MSTORE SWAP2 AND SWAP1 PUSH4 0x7FF36AB5 SWAP1 CALLVALUE SWAP1 PUSH2 0x1F0 SWAP1 PUSH1 0x0 SWAP1 DUP7 SWAP1 CALLER SWAP1 TIMESTAMP SWAP1 PUSH1 0x4 ADD PUSH2 0x2A6 JUMP JUMPDEST PUSH1 0x0 PUSH1 0x40 MLOAD DUP1 DUP4 SUB DUP2 DUP6 DUP9 DUP1 EXTCODESIZE ISZERO DUP1 ISZERO PUSH2 0x209 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP GAS CALL ISZERO DUP1 ISZERO PUSH2 0x21D JUMPI RETURNDATASIZE PUSH1 0x0 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST POP POP POP POP POP PUSH1 0x40 MLOAD RETURNDATASIZE PUSH1 0x0 DUP3 RETURNDATACOPY PUSH1 0x1F RETURNDATASIZE SWAP1 DUP2 ADD PUSH1 0x1F NOT AND DUP3 ADD PUSH1 0x40 MSTORE PUSH2 0x246 SWAP2 SWAP1 DUP2 ADD SWAP1 PUSH2 0x310 JUMP JUMPDEST POP POP JUMP JUMPDEST PUSH4 0x4E487B71 PUSH1 0xE0 SHL PUSH1 0x0 MSTORE PUSH1 0x41 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT JUMPDEST PUSH1 0x0 PUSH1 0x20 DUP3 DUP5 SUB SLT ISZERO PUSH2 0x272 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP2 MLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP2 AND DUP2 EQ PUSH2 0x289 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST SWAP4 SWAP3 POP POP POP JUMP JUMPDEST PUSH4 0x4E487B71 PUSH1 0xE0 SHL PUSH1 0x0 MSTORE PUSH1 0x32 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT JUMPDEST PUSH1 0x0 PUSH1 0x80 DUP3 ADD DUP7 DUP4 MSTORE PUSH1 0x20 PUSH1 0x80 DUP2 DUP6 ADD MSTORE DUP2 DUP8 MLOAD DUP1 DUP5 MSTORE PUSH1 0xA0 DUP7 ADD SWAP2 POP DUP3 DUP10 ADD SWAP4 POP PUSH1 0x0 JUMPDEST DUP2 DUP2 LT ISZERO PUSH2 0x2F0 JUMPI DUP5 MLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND DUP4 MSTORE SWAP4 DUP4 ADD SWAP4 SWAP2 DUP4 ADD SWAP2 PUSH1 0x1 ADD PUSH2 0x2CB JUMP JUMPDEST POP POP PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP7 SWAP1 SWAP7 AND PUSH1 0x40 DUP6 ADD MSTORE POP POP POP PUSH1 0x60 ADD MSTORE SWAP3 SWAP2 POP POP JUMP JUMPDEST PUSH1 0x0 PUSH1 0x20 DUP1 DUP4 DUP6 SUB SLT ISZERO PUSH2 0x323 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP3 MLOAD PUSH8 0xFFFFFFFFFFFFFFFF DUP1 DUP3 GT ISZERO PUSH2 0x33B JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP2 DUP6 ADD SWAP2 POP DUP6 PUSH1 0x1F DUP4 ADD SLT PUSH2 0x34F JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP2 MLOAD DUP2 DUP2 GT ISZERO PUSH2 0x361 JUMPI PUSH2 0x361 PUSH2 0x24A JUMP JUMPDEST DUP1 PUSH1 0x5 SHL PUSH1 0x40 MLOAD PUSH1 0x1F NOT PUSH1 0x3F DUP4 ADD AND DUP2 ADD DUP2 DUP2 LT DUP6 DUP3 GT OR ISZERO PUSH2 0x386 JUMPI PUSH2 0x386 PUSH2 0x24A JUMP JUMPDEST PUSH1 0x40 MSTORE SWAP2 DUP3 MSTORE DUP5 DUP3 ADD SWAP3 POP DUP4 DUP2 ADD DUP6 ADD SWAP2 DUP9 DUP4 GT ISZERO PUSH2 0x3A4 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST SWAP4 DUP6 ADD SWAP4 JUMPDEST DUP3 DUP6 LT ISZERO PUSH2 0x3C2 JUMPI DUP5 MLOAD DUP5 MSTORE SWAP4 DUP6 ADD SWAP4 SWAP3 DUP6 ADD SWAP3 PUSH2 0x3A9 JUMP JUMPDEST SWAP9 SWAP8 POP POP POP POP POP POP POP POP JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 DUP5 SWAP15 DUP7 0xEA 0x27 SHR SUB 0x25 0xC9 0x25 0xF PUSH4 0x2B23AD08 SWAP6 0xC5 0xC6 CALLDATALOAD 0xE4 0xE 0xCE DUP9 0xC1 0xE0 DUP5 ORIGIN JUMPDEST CALLCODE LT DUP2 PUSH5 0x736F6C6343 STOP ADDMOD MULMOD STOP CALLER ",
+  "pcMap": {
+    "0": {
+      "offset": [
+        141,
+        977
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x80"
+    },
+    "2": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "4": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "5": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "7": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "CALLDATASIZE",
+      "path": "0"
+    },
+    "8": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "LT",
+      "path": "0"
+    },
+    "9": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x3F"
+    },
+    "12": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "13": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "15": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "CALLDATALOAD",
+      "path": "0"
+    },
+    "16": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0xE0"
+    },
+    "18": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "SHR",
+      "path": "0"
+    },
+    "19": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "20": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x276184AE"
+    },
+    "25": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "26": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x44"
+    },
+    "29": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "30": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "31": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x4A377E1D"
+    },
+    "36": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "37": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x80"
+    },
+    "40": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "41": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "42": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x6CA58C02"
+    },
+    "47": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "48": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0xA0"
+    },
+    "51": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "52": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "53": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x735DE9F7"
+    },
+    "58": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "59": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0xAA"
+    },
+    "62": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "63": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "64": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "66": {
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "67": {
+      "first_revert": true,
+      "fn": null,
+      "offset": [
+        141,
+        977
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "68": {
+      "offset": [
+        235,
+        262
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "69": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "CALLVALUE",
+      "path": "0"
+    },
+    "70": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "71": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "72": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x50"
+    },
+    "75": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "76": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "78": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "79": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "80": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "81": {
+      "op": "POP"
+    },
+    "82": {
+      "offset": [
+        235,
+        262
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "84": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "85": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x64"
+    },
+    "88": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "89": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "91": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "93": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "95": {
+      "op": "SHL"
+    },
+    "96": {
+      "op": "SUB"
+    },
+    "97": {
+      "offset": [
+        235,
+        262
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "98": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "99": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "100": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "101": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "103": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "104": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "106": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "108": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "110": {
+      "op": "SHL"
+    },
+    "111": {
+      "op": "SUB"
+    },
+    "112": {
+      "op": "SWAP1"
+    },
+    "113": {
+      "op": "SWAP2"
+    },
+    "114": {
+      "op": "AND"
+    },
+    "115": {
+      "op": "DUP2"
+    },
+    "116": {
+      "op": "MSTORE"
+    },
+    "117": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "119": {
+      "op": "ADD"
+    },
+    "120": {
+      "offset": [
+        235,
+        262
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "122": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "123": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "124": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "125": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "SUB",
+      "path": "0"
+    },
+    "126": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "127": {
+      "fn": null,
+      "offset": [
+        235,
+        262
+      ],
+      "op": "RETURN",
+      "path": "0"
+    },
+    "128": {
+      "offset": [
+        192,
+        229
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "129": {
+      "fn": null,
+      "offset": [
+        192,
+        229
+      ],
+      "op": "CALLVALUE",
+      "path": "0"
+    },
+    "130": {
+      "fn": null,
+      "offset": [
+        192,
+        229
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "131": {
+      "fn": null,
+      "offset": [
+        192,
+        229
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "132": {
+      "fn": null,
+      "offset": [
+        192,
+        229
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x8C"
+    },
+    "135": {
+      "fn": null,
+      "offset": [
+        192,
+        229
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "136": {
+      "fn": null,
+      "offset": [
+        192,
+        229
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "138": {
+      "fn": null,
+      "offset": [
+        192,
+        229
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "139": {
+      "fn": null,
+      "offset": [
+        192,
+        229
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "140": {
+      "fn": null,
+      "offset": [
+        192,
+        229
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "141": {
+      "op": "POP"
+    },
+    "142": {
+      "offset": [
+        192,
+        229
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "144": {
+      "fn": null,
+      "offset": [
+        192,
+        229
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "145": {
+      "fn": null,
+      "offset": [
+        192,
+        229
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x64"
+    },
+    "148": {
+      "fn": null,
+      "offset": [
+        192,
+        229
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "149": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "151": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "153": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "155": {
+      "op": "SHL"
+    },
+    "156": {
+      "op": "SUB"
+    },
+    "157": {
+      "offset": [
+        192,
+        229
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "158": {
+      "fn": null,
+      "offset": [
+        192,
+        229
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "159": {
+      "fn": null,
+      "offset": [
+        192,
+        229
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "160": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        601,
+        975
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "161": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        601,
+        975
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0xA8"
+    },
+    "164": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        601,
+        975
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0xCA"
+    },
+    "167": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "jump": "i",
+      "offset": [
+        601,
+        975
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "168": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        601,
+        975
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "169": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        601,
+        975
+      ],
+      "op": "STOP",
+      "path": "0"
+    },
+    "170": {
+      "offset": [
+        268,
+        307
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "171": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        268,
+        307
+      ],
+      "op": "CALLVALUE",
+      "path": "0"
+    },
+    "172": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        268,
+        307
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "173": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        268,
+        307
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "174": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        268,
+        307
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0xB6"
+    },
+    "177": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        268,
+        307
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "178": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        268,
+        307
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "180": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        268,
+        307
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "181": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        268,
+        307
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "182": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        268,
+        307
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "183": {
+      "op": "POP"
+    },
+    "184": {
+      "offset": [
+        268,
+        307
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x2"
+    },
+    "186": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        268,
+        307
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "187": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        268,
+        307
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x64"
+    },
+    "190": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        268,
+        307
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "191": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "193": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "195": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "197": {
+      "op": "SHL"
+    },
+    "198": {
+      "op": "SUB"
+    },
+    "199": {
+      "offset": [
+        268,
+        307
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "200": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        268,
+        307
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "201": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        268,
+        307
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "202": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        601,
+        975
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "203": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "205": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "206": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "207": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        734,
+        735
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x2"
+    },
+    "209": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "210": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "211": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "212": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x60"
+    },
+    "214": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "215": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "216": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "217": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "218": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        696,
+        717
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "220": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        696,
+        717
+      ],
+      "op": "SWAP3",
+      "path": "0"
+    },
+    "221": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "223": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "224": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "225": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "226": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "227": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "CALLDATASIZE",
+      "path": "0"
+    },
+    "228": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "229": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        720,
+        736
+      ],
+      "op": "CALLDATACOPY",
+      "path": "0"
+    },
+    "230": {
+      "op": "POP"
+    },
+    "231": {
+      "op": "POP"
+    },
+    "232": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        769
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 0,
+      "value": "0x2"
+    },
+    "234": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        769
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "235": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "237": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "238": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "239": {
+      "op": "PUSH4",
+      "value": "0x15AB88C9"
+    },
+    "244": {
+      "op": "PUSH1",
+      "value": "0xE3"
+    },
+    "246": {
+      "op": "SHL"
+    },
+    "247": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "248": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "249": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "250": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "251": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        696,
+        736
+      ],
+      "op": "SWAP4",
+      "path": "0"
+    },
+    "252": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        696,
+        736
+      ],
+      "op": "SWAP5",
+      "path": "0"
+    },
+    "253": {
+      "op": "POP"
+    },
+    "254": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "256": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "258": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "260": {
+      "op": "SHL"
+    },
+    "261": {
+      "op": "SUB"
+    },
+    "262": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        769
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "263": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        769
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "264": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        769
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "265": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        769
+      ],
+      "op": "SWAP3",
+      "path": "0"
+    },
+    "266": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        774
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0xAD5C4648"
+    },
+    "271": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        774
+      ],
+      "op": "SWAP3",
+      "path": "0"
+    },
+    "272": {
+      "op": "POP"
+    },
+    "273": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "275": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "276": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "277": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "278": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "SWAP3",
+      "path": "0"
+    },
+    "279": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "281": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "SWAP3",
+      "path": "0"
+    },
+    "282": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "283": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "284": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "285": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "286": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "SUB",
+      "path": "0"
+    },
+    "287": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "288": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "289": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        769
+      ],
+      "op": "DUP7",
+      "path": "0"
+    },
+    "290": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "291": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "EXTCODESIZE",
+      "path": "0"
+    },
+    "292": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "293": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "294": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "295": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x12F"
+    },
+    "298": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "299": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "301": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "302": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "303": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "304": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "305": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "GAS",
+      "path": "0"
+    },
+    "306": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "STATICCALL",
+      "path": "0"
+    },
+    "307": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "308": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "309": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "310": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x143"
+    },
+    "313": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "314": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "0"
+    },
+    "315": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "317": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "318": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "RETURNDATACOPY",
+      "path": "0"
+    },
+    "319": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "0"
+    },
+    "320": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "322": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "323": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "324": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "325": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "326": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "327": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "328": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "330": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "331": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "0"
+    },
+    "332": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1F"
+    },
+    "334": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "NOT",
+      "path": "0"
+    },
+    "335": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1F"
+    },
+    "337": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "338": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "339": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "340": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "341": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "342": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "343": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "345": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "346": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "347": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "348": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "349": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "350": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x167"
+    },
+    "353": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "354": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "355": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x260"
+    },
+    "358": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "jump": "i",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "359": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        756,
+        776
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "360": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        750
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "361": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        751,
+        752
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "363": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "364": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "365": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "366": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "LT",
+      "path": "0"
+    },
+    "367": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x17A"
+    },
+    "370": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "371": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x17A"
+    },
+    "374": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x290"
+    },
+    "377": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "jump": "i",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "378": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "379": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "381": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "383": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "385": {
+      "op": "SHL"
+    },
+    "386": {
+      "op": "SUB"
+    },
+    "387": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        776
+      ],
+      "op": "SWAP3",
+      "path": "0"
+    },
+    "388": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        776
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "389": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        776
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "390": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "392": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "393": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "394": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "MUL",
+      "path": "0"
+    },
+    "395": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "SWAP3",
+      "path": "0"
+    },
+    "396": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "397": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "SWAP3",
+      "path": "0"
+    },
+    "398": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "399": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        753
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "400": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        746,
+        776
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "401": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        796,
+        808
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 1,
+      "value": "0x1"
+    },
+    "403": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        796,
+        808
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "404": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        796,
+        808
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "405": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "406": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "407": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        796,
+        808
+      ],
+      "op": "SWAP3",
+      "path": "0"
+    },
+    "408": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        796,
+        808
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "409": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        796,
+        808
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "410": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        790
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "411": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        790
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "412": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        796,
+        808
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "413": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "414": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "LT",
+      "path": "0"
+    },
+    "415": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1AA"
+    },
+    "418": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "419": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1AA"
+    },
+    "422": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x290"
+    },
+    "425": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "jump": "i",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "426": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "427": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "429": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "431": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "433": {
+      "op": "SHL"
+    },
+    "434": {
+      "op": "SUB"
+    },
+    "435": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        808
+      ],
+      "op": "SWAP3",
+      "path": "0"
+    },
+    "436": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        808
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "437": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        808
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "438": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "440": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "441": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "442": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "MUL",
+      "path": "0"
+    },
+    "443": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "SWAP3",
+      "path": "0"
+    },
+    "444": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "445": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "SWAP3",
+      "path": "0"
+    },
+    "446": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "447": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        793
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "448": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        786,
+        808
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "449": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        832
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 2,
+      "value": "0x2"
+    },
+    "451": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        832
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "452": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "454": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "455": {
+      "op": "PUSH4",
+      "value": "0x7FF36AB5"
+    },
+    "460": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "462": {
+      "op": "SHL"
+    },
+    "463": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "464": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "465": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        832
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "466": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        832
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "467": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        832
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "468": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        854
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x7FF36AB5"
+    },
+    "473": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        854
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "474": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        862,
+        871
+      ],
+      "op": "CALLVALUE",
+      "path": "0"
+    },
+    "475": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        862,
+        871
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "476": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1F0"
+    },
+    "479": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "480": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        832
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "482": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        832
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "483": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        901,
+        905
+      ],
+      "op": "DUP7",
+      "path": "0"
+    },
+    "484": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        901,
+        905
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "485": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        919,
+        929
+      ],
+      "op": "CALLER",
+      "path": "0"
+    },
+    "486": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        919,
+        929
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "487": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        943,
+        958
+      ],
+      "op": "TIMESTAMP",
+      "path": "0"
+    },
+    "488": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        943,
+        958
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "489": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "491": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "492": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x2A6"
+    },
+    "495": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "jump": "i",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "496": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "497": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "499": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "501": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "502": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "503": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "504": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "SUB",
+      "path": "0"
+    },
+    "505": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "506": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "DUP6",
+      "path": "0"
+    },
+    "507": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "DUP9",
+      "path": "0"
+    },
+    "508": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "509": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "EXTCODESIZE",
+      "path": "0"
+    },
+    "510": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "511": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "512": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "513": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x209"
+    },
+    "516": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "517": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "519": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "520": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "521": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "522": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "523": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "GAS",
+      "path": "0"
+    },
+    "524": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "CALL",
+      "path": "0"
+    },
+    "525": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "526": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "527": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "528": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x21D"
+    },
+    "531": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "532": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "0"
+    },
+    "533": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "535": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "536": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "RETURNDATACOPY",
+      "path": "0"
+    },
+    "537": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "0"
+    },
+    "538": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "540": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "541": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "542": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "543": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "544": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "545": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "546": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "547": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "549": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "550": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "0"
+    },
+    "551": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "553": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "554": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "RETURNDATACOPY",
+      "path": "0"
+    },
+    "555": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1F"
+    },
+    "557": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "0"
+    },
+    "558": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "559": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "560": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "561": {
+      "op": "PUSH1",
+      "value": "0x1F"
+    },
+    "563": {
+      "op": "NOT"
+    },
+    "564": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "565": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "566": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "567": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "569": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "570": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x246"
+    },
+    "573": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "574": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "575": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "576": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "577": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "578": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x310"
+    },
+    "581": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "jump": "i",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "582": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "583": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        819,
+        968
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "584": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "offset": [
+        642,
+        975
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "585": {
+      "fn": "ERC20Faucet.swapETHtoERC20",
+      "jump": "o",
+      "offset": [
+        601,
+        975
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "586": {
+      "op": "JUMPDEST"
+    },
+    "587": {
+      "op": "PUSH4",
+      "value": "0x4E487B71"
+    },
+    "592": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "594": {
+      "op": "SHL"
+    },
+    "595": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "597": {
+      "op": "MSTORE"
+    },
+    "598": {
+      "op": "PUSH1",
+      "value": "0x41"
+    },
+    "600": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "602": {
+      "op": "MSTORE"
+    },
+    "603": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "605": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "607": {
+      "op": "REVERT"
+    },
+    "608": {
+      "op": "JUMPDEST"
+    },
+    "609": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "611": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "613": {
+      "op": "DUP3"
+    },
+    "614": {
+      "op": "DUP5"
+    },
+    "615": {
+      "op": "SUB"
+    },
+    "616": {
+      "op": "SLT"
+    },
+    "617": {
+      "op": "ISZERO"
+    },
+    "618": {
+      "op": "PUSH2",
+      "value": "0x272"
+    },
+    "621": {
+      "op": "JUMPI"
+    },
+    "622": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "624": {
+      "op": "DUP1"
+    },
+    "625": {
+      "op": "REVERT"
+    },
+    "626": {
+      "op": "JUMPDEST"
+    },
+    "627": {
+      "op": "DUP2"
+    },
+    "628": {
+      "op": "MLOAD"
+    },
+    "629": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "631": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "633": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "635": {
+      "op": "SHL"
+    },
+    "636": {
+      "op": "SUB"
+    },
+    "637": {
+      "op": "DUP2"
+    },
+    "638": {
+      "op": "AND"
+    },
+    "639": {
+      "op": "DUP2"
+    },
+    "640": {
+      "op": "EQ"
+    },
+    "641": {
+      "op": "PUSH2",
+      "value": "0x289"
+    },
+    "644": {
+      "op": "JUMPI"
+    },
+    "645": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "647": {
+      "op": "DUP1"
+    },
+    "648": {
+      "op": "REVERT"
+    },
+    "649": {
+      "op": "JUMPDEST"
+    },
+    "650": {
+      "op": "SWAP4"
+    },
+    "651": {
+      "op": "SWAP3"
+    },
+    "652": {
+      "op": "POP"
+    },
+    "653": {
+      "op": "POP"
+    },
+    "654": {
+      "op": "POP"
+    },
+    "655": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "656": {
+      "op": "JUMPDEST"
+    },
+    "657": {
+      "op": "PUSH4",
+      "value": "0x4E487B71"
+    },
+    "662": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "664": {
+      "op": "SHL"
+    },
+    "665": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "667": {
+      "op": "MSTORE"
+    },
+    "668": {
+      "op": "PUSH1",
+      "value": "0x32"
+    },
+    "670": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "672": {
+      "op": "MSTORE"
+    },
+    "673": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "675": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "677": {
+      "op": "REVERT"
+    },
+    "678": {
+      "op": "JUMPDEST"
+    },
+    "679": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "681": {
+      "op": "PUSH1",
+      "value": "0x80"
+    },
+    "683": {
+      "op": "DUP3"
+    },
+    "684": {
+      "op": "ADD"
+    },
+    "685": {
+      "op": "DUP7"
+    },
+    "686": {
+      "op": "DUP4"
+    },
+    "687": {
+      "op": "MSTORE"
+    },
+    "688": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "690": {
+      "op": "PUSH1",
+      "value": "0x80"
+    },
+    "692": {
+      "op": "DUP2"
+    },
+    "693": {
+      "op": "DUP6"
+    },
+    "694": {
+      "op": "ADD"
+    },
+    "695": {
+      "op": "MSTORE"
+    },
+    "696": {
+      "op": "DUP2"
+    },
+    "697": {
+      "op": "DUP8"
+    },
+    "698": {
+      "op": "MLOAD"
+    },
+    "699": {
+      "op": "DUP1"
+    },
+    "700": {
+      "op": "DUP5"
+    },
+    "701": {
+      "op": "MSTORE"
+    },
+    "702": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "704": {
+      "op": "DUP7"
+    },
+    "705": {
+      "op": "ADD"
+    },
+    "706": {
+      "op": "SWAP2"
+    },
+    "707": {
+      "op": "POP"
+    },
+    "708": {
+      "op": "DUP3"
+    },
+    "709": {
+      "op": "DUP10"
+    },
+    "710": {
+      "op": "ADD"
+    },
+    "711": {
+      "op": "SWAP4"
+    },
+    "712": {
+      "op": "POP"
+    },
+    "713": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "715": {
+      "op": "JUMPDEST"
+    },
+    "716": {
+      "op": "DUP2"
+    },
+    "717": {
+      "op": "DUP2"
+    },
+    "718": {
+      "op": "LT"
+    },
+    "719": {
+      "op": "ISZERO"
+    },
+    "720": {
+      "op": "PUSH2",
+      "value": "0x2F0"
+    },
+    "723": {
+      "op": "JUMPI"
+    },
+    "724": {
+      "op": "DUP5"
+    },
+    "725": {
+      "op": "MLOAD"
+    },
+    "726": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "728": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "730": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "732": {
+      "op": "SHL"
+    },
+    "733": {
+      "op": "SUB"
+    },
+    "734": {
+      "op": "AND"
+    },
+    "735": {
+      "op": "DUP4"
+    },
+    "736": {
+      "op": "MSTORE"
+    },
+    "737": {
+      "op": "SWAP4"
+    },
+    "738": {
+      "op": "DUP4"
+    },
+    "739": {
+      "op": "ADD"
+    },
+    "740": {
+      "op": "SWAP4"
+    },
+    "741": {
+      "op": "SWAP2"
+    },
+    "742": {
+      "op": "DUP4"
+    },
+    "743": {
+      "op": "ADD"
+    },
+    "744": {
+      "op": "SWAP2"
+    },
+    "745": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "747": {
+      "op": "ADD"
+    },
+    "748": {
+      "op": "PUSH2",
+      "value": "0x2CB"
+    },
+    "751": {
+      "op": "JUMP"
+    },
+    "752": {
+      "op": "JUMPDEST"
+    },
+    "753": {
+      "op": "POP"
+    },
+    "754": {
+      "op": "POP"
+    },
+    "755": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "757": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "759": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "761": {
+      "op": "SHL"
+    },
+    "762": {
+      "op": "SUB"
+    },
+    "763": {
+      "op": "SWAP7"
+    },
+    "764": {
+      "op": "SWAP1"
+    },
+    "765": {
+      "op": "SWAP7"
+    },
+    "766": {
+      "op": "AND"
+    },
+    "767": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "769": {
+      "op": "DUP6"
+    },
+    "770": {
+      "op": "ADD"
+    },
+    "771": {
+      "op": "MSTORE"
+    },
+    "772": {
+      "op": "POP"
+    },
+    "773": {
+      "op": "POP"
+    },
+    "774": {
+      "op": "POP"
+    },
+    "775": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "777": {
+      "op": "ADD"
+    },
+    "778": {
+      "op": "MSTORE"
+    },
+    "779": {
+      "op": "SWAP3"
+    },
+    "780": {
+      "op": "SWAP2"
+    },
+    "781": {
+      "op": "POP"
+    },
+    "782": {
+      "op": "POP"
+    },
+    "783": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "784": {
+      "op": "JUMPDEST"
+    },
+    "785": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "787": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "789": {
+      "op": "DUP1"
+    },
+    "790": {
+      "op": "DUP4"
+    },
+    "791": {
+      "op": "DUP6"
+    },
+    "792": {
+      "op": "SUB"
+    },
+    "793": {
+      "op": "SLT"
+    },
+    "794": {
+      "op": "ISZERO"
+    },
+    "795": {
+      "op": "PUSH2",
+      "value": "0x323"
+    },
+    "798": {
+      "op": "JUMPI"
+    },
+    "799": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "801": {
+      "op": "DUP1"
+    },
+    "802": {
+      "op": "REVERT"
+    },
+    "803": {
+      "op": "JUMPDEST"
+    },
+    "804": {
+      "op": "DUP3"
+    },
+    "805": {
+      "op": "MLOAD"
+    },
+    "806": {
+      "op": "PUSH8",
+      "value": "0xFFFFFFFFFFFFFFFF"
+    },
+    "815": {
+      "op": "DUP1"
+    },
+    "816": {
+      "op": "DUP3"
+    },
+    "817": {
+      "op": "GT"
+    },
+    "818": {
+      "op": "ISZERO"
+    },
+    "819": {
+      "op": "PUSH2",
+      "value": "0x33B"
+    },
+    "822": {
+      "op": "JUMPI"
+    },
+    "823": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "825": {
+      "op": "DUP1"
+    },
+    "826": {
+      "op": "REVERT"
+    },
+    "827": {
+      "op": "JUMPDEST"
+    },
+    "828": {
+      "op": "DUP2"
+    },
+    "829": {
+      "op": "DUP6"
+    },
+    "830": {
+      "op": "ADD"
+    },
+    "831": {
+      "op": "SWAP2"
+    },
+    "832": {
+      "op": "POP"
+    },
+    "833": {
+      "op": "DUP6"
+    },
+    "834": {
+      "op": "PUSH1",
+      "value": "0x1F"
+    },
+    "836": {
+      "op": "DUP4"
+    },
+    "837": {
+      "op": "ADD"
+    },
+    "838": {
+      "op": "SLT"
+    },
+    "839": {
+      "op": "PUSH2",
+      "value": "0x34F"
+    },
+    "842": {
+      "op": "JUMPI"
+    },
+    "843": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "845": {
+      "op": "DUP1"
+    },
+    "846": {
+      "op": "REVERT"
+    },
+    "847": {
+      "op": "JUMPDEST"
+    },
+    "848": {
+      "op": "DUP2"
+    },
+    "849": {
+      "op": "MLOAD"
+    },
+    "850": {
+      "op": "DUP2"
+    },
+    "851": {
+      "op": "DUP2"
+    },
+    "852": {
+      "op": "GT"
+    },
+    "853": {
+      "op": "ISZERO"
+    },
+    "854": {
+      "op": "PUSH2",
+      "value": "0x361"
+    },
+    "857": {
+      "op": "JUMPI"
+    },
+    "858": {
+      "op": "PUSH2",
+      "value": "0x361"
+    },
+    "861": {
+      "op": "PUSH2",
+      "value": "0x24A"
+    },
+    "864": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "865": {
+      "op": "JUMPDEST"
+    },
+    "866": {
+      "op": "DUP1"
+    },
+    "867": {
+      "op": "PUSH1",
+      "value": "0x5"
+    },
+    "869": {
+      "op": "SHL"
+    },
+    "870": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "872": {
+      "op": "MLOAD"
+    },
+    "873": {
+      "op": "PUSH1",
+      "value": "0x1F"
+    },
+    "875": {
+      "op": "NOT"
+    },
+    "876": {
+      "op": "PUSH1",
+      "value": "0x3F"
+    },
+    "878": {
+      "op": "DUP4"
+    },
+    "879": {
+      "op": "ADD"
+    },
+    "880": {
+      "op": "AND"
+    },
+    "881": {
+      "op": "DUP2"
+    },
+    "882": {
+      "op": "ADD"
+    },
+    "883": {
+      "op": "DUP2"
+    },
+    "884": {
+      "op": "DUP2"
+    },
+    "885": {
+      "op": "LT"
+    },
+    "886": {
+      "op": "DUP6"
+    },
+    "887": {
+      "op": "DUP3"
+    },
+    "888": {
+      "op": "GT"
+    },
+    "889": {
+      "op": "OR"
+    },
+    "890": {
+      "op": "ISZERO"
+    },
+    "891": {
+      "op": "PUSH2",
+      "value": "0x386"
+    },
+    "894": {
+      "op": "JUMPI"
+    },
+    "895": {
+      "op": "PUSH2",
+      "value": "0x386"
+    },
+    "898": {
+      "op": "PUSH2",
+      "value": "0x24A"
+    },
+    "901": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "902": {
+      "op": "JUMPDEST"
+    },
+    "903": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "905": {
+      "op": "MSTORE"
+    },
+    "906": {
+      "op": "SWAP2"
+    },
+    "907": {
+      "op": "DUP3"
+    },
+    "908": {
+      "op": "MSTORE"
+    },
+    "909": {
+      "op": "DUP5"
+    },
+    "910": {
+      "op": "DUP3"
+    },
+    "911": {
+      "op": "ADD"
+    },
+    "912": {
+      "op": "SWAP3"
+    },
+    "913": {
+      "op": "POP"
+    },
+    "914": {
+      "op": "DUP4"
+    },
+    "915": {
+      "op": "DUP2"
+    },
+    "916": {
+      "op": "ADD"
+    },
+    "917": {
+      "op": "DUP6"
+    },
+    "918": {
+      "op": "ADD"
+    },
+    "919": {
+      "op": "SWAP2"
+    },
+    "920": {
+      "op": "DUP9"
+    },
+    "921": {
+      "op": "DUP4"
+    },
+    "922": {
+      "op": "GT"
+    },
+    "923": {
+      "op": "ISZERO"
+    },
+    "924": {
+      "op": "PUSH2",
+      "value": "0x3A4"
+    },
+    "927": {
+      "op": "JUMPI"
+    },
+    "928": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "930": {
+      "op": "DUP1"
+    },
+    "931": {
+      "op": "REVERT"
+    },
+    "932": {
+      "op": "JUMPDEST"
+    },
+    "933": {
+      "op": "SWAP4"
+    },
+    "934": {
+      "op": "DUP6"
+    },
+    "935": {
+      "op": "ADD"
+    },
+    "936": {
+      "op": "SWAP4"
+    },
+    "937": {
+      "op": "JUMPDEST"
+    },
+    "938": {
+      "op": "DUP3"
+    },
+    "939": {
+      "op": "DUP6"
+    },
+    "940": {
+      "op": "LT"
+    },
+    "941": {
+      "op": "ISZERO"
+    },
+    "942": {
+      "op": "PUSH2",
+      "value": "0x3C2"
+    },
+    "945": {
+      "op": "JUMPI"
+    },
+    "946": {
+      "op": "DUP5"
+    },
+    "947": {
+      "op": "MLOAD"
+    },
+    "948": {
+      "op": "DUP5"
+    },
+    "949": {
+      "op": "MSTORE"
+    },
+    "950": {
+      "op": "SWAP4"
+    },
+    "951": {
+      "op": "DUP6"
+    },
+    "952": {
+      "op": "ADD"
+    },
+    "953": {
+      "op": "SWAP4"
+    },
+    "954": {
+      "op": "SWAP3"
+    },
+    "955": {
+      "op": "DUP6"
+    },
+    "956": {
+      "op": "ADD"
+    },
+    "957": {
+      "op": "SWAP3"
+    },
+    "958": {
+      "op": "PUSH2",
+      "value": "0x3A9"
+    },
+    "961": {
+      "op": "JUMP"
+    },
+    "962": {
+      "op": "JUMPDEST"
+    },
+    "963": {
+      "op": "SWAP9"
+    },
+    "964": {
+      "op": "SWAP8"
+    },
+    "965": {
+      "op": "POP"
+    },
+    "966": {
+      "op": "POP"
+    },
+    "967": {
+      "op": "POP"
+    },
+    "968": {
+      "op": "POP"
+    },
+    "969": {
+      "op": "POP"
+    },
+    "970": {
+      "op": "POP"
+    },
+    "971": {
+      "op": "POP"
+    },
+    "972": {
+      "op": "POP"
+    },
+    "973": {
+      "jump": "o",
+      "op": "JUMP"
+    }
+  },
+  "sha1": "2f55b423393452c489f0c48acbcbec7a9f1aa789",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.0;\n\nimport \"../interfaces/IERC20.sol\";\nimport \"../interfaces/IUniswapV2Router02.sol\";\n\ncontract ERC20Faucet {\n    /// STATE VARIABLES\n    address public uniswapV2RouterAddress;\n    address public erc20Address;\n    IUniswapV2Router02 public uniswapRouter;\n\n    /// CONSTRUCTOR\n    constructor(address _uniswapV2RouterAddress, address _erc20Address) {\n        uniswapV2RouterAddress = _uniswapV2RouterAddress;\n        erc20Address = _erc20Address;\n        uniswapRouter = IUniswapV2Router02(_uniswapV2RouterAddress);\n    }\n\n    /// TRANSACTIONS\n    function swapETHtoERC20() public payable {\n        // getting path between ETH and DAI\n        address[] memory path = new address[](2);\n        path[0] = uniswapRouter.WETH();\n        path[1] = erc20Address;\n\n        uniswapRouter.swapExactETHForTokens{value: msg.value}(\n            0,\n            path,\n            msg.sender,\n            block.timestamp\n        );\n    }\n}\n",
+  "sourceMap": "141:836:0:-:0;;;334:240;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;412:22;:48;;-1:-1:-1;;;;;412:48:0;;;-1:-1:-1;;;;;;412:48:0;;;;;;;;;470:28;;;;;;;;;;;;;;;;508:13;:59;;;;;;;;;;141:836;;14:177:4;93:13;;-1:-1:-1;;;;;135:31:4;;125:42;;115:70;;181:1;178;171:12;115:70;14:177;;;:::o;196:293::-;275:6;283;336:2;324:9;315:7;311:23;307:32;304:52;;;352:1;349;342:12;304:52;375:40;405:9;375:40;:::i;:::-;365:50;;434:49;479:2;468:9;464:18;434:49;:::i;:::-;424:59;;196:293;;;;;:::o;:::-;141:836:0;;;;;;",
+  "sourcePath": "contracts/ERC20Faucet.sol",
+  "type": "contract"
+}
