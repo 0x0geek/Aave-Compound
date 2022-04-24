@@ -4,7 +4,7 @@ wallets:
   from_key: ${PRIVATE_KEY}
 
 dependencies:
-  - "aave/protocol-v2@1.0.1"
+  - aave/protocol-v2@1.0.1
   - OpenZeppelin/openzeppelin-contracts@4.3.2
 
 compiler:
@@ -14,13 +14,25 @@ compiler:
       - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.3.2"
 
 networks:
+  # INFURA mainnet fork
   mainnet-fork:
-    weth-token: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+    uniswap-router: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D"
     dai-token: "0x6b175474e89094c44da98b954eedeac495271d0f"
+
+    lending-pool: "0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9"
     provider: "0xb53c1a33016b2dc2ff3653530bff1848a515c8c5"
+    aave-data-provider: "0x057835Ad21a177dbdd3090bB1CAE03EaCF78Fc6d"
+
     cdai: "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643"
+    adai: "0x028171bCA77440897B824Ca71D1c56caC55b68A3"
+  # ALCHEMY mainnet fork
   mainnet-fork-dev:
-    weth-token: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+    uniswap-router: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D"
     dai-token: "0x6b175474e89094c44da98b954eedeac495271d0f"
+
+    lending-pool: "0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9"
     provider: "0xb53c1a33016b2dc2ff3653530bff1848a515c8c5"
+    aave-data-provider: "0x057835Ad21a177dbdd3090bB1CAE03EaCF78Fc6d"
+
     cdai: "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643"
+    adai: "0x028171bCA77440897B824Ca71D1c56caC55b68A3"
