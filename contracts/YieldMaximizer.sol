@@ -153,6 +153,8 @@ contract YieldMaximizer {
 
         Token memory _token = supportedERC20Tokens[_symbol];
 
+        uint256 depositedAmount = userTokensAmountMapping[_symbol];
+
         IERC20(_token.erc20Address).transferFrom(
             msg.sender,
             address(this),
@@ -161,20 +163,32 @@ contract YieldMaximizer {
         userTokensAmountMapping[_symbol] += _amount;
         Protocol _currentProtocol;
 
-        if (_aaveAPY > _compAPY) {
-            _depositToAave(_amount, _token.erc20Address);
-            _currentProtocol = Protocol.AAVE;
+        if (depositedAmount > 0) {
+            _currentProtocol = tokensProtocolMappings[_symbol];
+            if (_currentProtocol == Protocol.AAVE) {
+                _depositToAave(_amount, _token.erc20Address);
+            } else {
+                _depositToCompound(
+                    _amount,
+                    _token.erc20Address,
+                    _token.cErc20Address
+                );
+            }
         } else {
-            _depositToCompound(
-                _amount,
-                _token.erc20Address,
-                _token.cErc20Address
-            );
-            _currentProtocol = Protocol.COMPOUND;
+            if (_aaveAPY > _compAPY) {
+                _depositToAave(_amount, _token.erc20Address);
+                _currentProtocol = Protocol.AAVE;
+            } else {
+                _depositToCompound(
+                    _amount,
+                    _token.erc20Address,
+                    _token.cErc20Address
+                );
+                _currentProtocol = Protocol.COMPOUND;
+            }
+
+            tokensProtocolMappings[_symbol] = _currentProtocol;
         }
-
-        tokensProtocolMappings[_symbol] = _currentProtocol;
-
         emit Deposit(msg.sender, _amount, _currentProtocol);
     }
 
