@@ -5,7 +5,7 @@
 
  
 <p align="center">
-  <img alt="Dark" src="https://user-images.githubusercontent.com/83681204/156902471-1fc599a7-9e39-4c8f-8c6d-1b0026dd6f49.png" width="100%">
+  <img alt="Dark" src="https://user-images.githubusercontent.com/83681204/165184890-83cbef58-3beb-413e-ae17-42ec24207d8a.png" width="100%">
 </p>
 
 This Dapp allows users to compare the live deposit and borrow APYs for different tokens in the AAVE and Compound protocols.
