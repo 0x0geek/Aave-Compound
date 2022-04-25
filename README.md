@@ -75,8 +75,8 @@ Please install or have installed the following:
    
 2. Clone the repo:
    ```sh
-   git clone https://github.com/Aymen1001/MarketPlace-Dapp-V2.git
-   cd MarketPlace-Dapp-V2
+   git clone https://github.com/Aymen1001/aave-compound-apy-maximizer.git
+   cd aave-compound-apy-maximizer
    ```
    ```
 3. Set your environment variables
