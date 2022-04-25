@@ -95,6 +95,18 @@ Please install or have installed the following:
 <!-- Working EXAMPLES -->
 ## How it Works
 
+The application uses the aave interface ILending and the CTokenInterface from compound which allows to deposit and withdraw funds, and also to get the live supply & borrow apys from the aave and compound protocol respectively.
+
+The YieldMaximizer smart contract allows a user to create it's own crypto asset manager on top of the AAVE and Compound protocols, it uses the IERC20 interfaces so the contract can support all ERC20 tokens. When a user deposit an amount of given ERC20 the contract aiutomatically checks the highest apy and move the funds to it.
+
+YieldMaximizer has the following functionnalities:
+
+<ul>
+  <li><b>Add tokens:</b> user can choose the best ERC20 tokens listed on aave & compound and add them to the contract watchlist</li>
+  <li><b>Deposit & withdraw:</b> for depositing and withdrawing funds from the smart contract</li>
+  <li><b>Rebalance:</b> To check the best protocol and switch funds to it </li>  
+</ul>
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
