@@ -78,7 +78,6 @@ Please install or have installed the following:
    git clone https://github.com/Aymen1001/aave-compound-apy-maximizer.git
    cd aave-compound-apy-maximizer
    ```
-   ```
 3. Set your environment variables
    To be able to deploy to real testnets you need to add your PRIVATE_KEY (You can find your PRIVATE_KEY from your ethereum wallet like metamask) and the infura project Id (just create an infura account it's free) to the .env file:
    ```
@@ -117,11 +116,18 @@ YieldMaximizer has the following functionnalities:
 ### Scripts
 
    In the aave-compound-apy-maximizer folder you'll find a directory scripts, it contain all the python code for deploying your contracts and also some useful functions
-
+   
+   To run the yield maximizer on the DAI token (just an example, you can pick any other ERC20) run the commmand:
+   ```sh
+   brownie run scripts/asset_manager.py
+   ```
+   This will deposit to the protocol with the highest APY and wait a certain amount of time, then print the gain made.
+   
    The reset.py file is used to remove all previous contracts deployments from build directory:
    ```sh
    brownie run scripts/reset.py
    ```
+   
    The update_front_end.py is used to transfer all the smart contracts and interfaces data (abi,...) and addresses to the front end in the artifacts directory:
    ```sh
    brownie run scripts/update_front_end.py
