@@ -119,7 +119,7 @@ YieldMaximizer has the following functionnalities:
    
    To run the yield maximizer on the DAI token (just an example, you can pick any other ERC20) run the commmand:
    ```sh
-   brownie run scripts/asset_manager.py
+   brownie run scripts/asset_manager.py --network=mainnet-fork
    ```
    This will deposit to the protocol with the highest APY and wait a certain amount of time, then print the gain made.
    
