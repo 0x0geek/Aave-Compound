@@ -79,7 +79,7 @@ Please install or have installed the following:
     
 2. Clone the repo:
    ```sh
-   git clone https://github.com/Aymen1001/aave-compound-apy-maximizer.git
+   git clone https://github.com/kaymen99/aave-compound-apy-maximizer.git
    cd aave-compound-apy-maximizer
    ```
 3. Set your environment variables
